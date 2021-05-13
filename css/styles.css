@@ -806,6 +806,8 @@ img {
 }
 .modal-disclaimer-wrapper {
     display: flex;
+    position: relative;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
@@ -819,6 +821,26 @@ img {
     color: #757575;
     margin-left: 5px;
 }
+.modal-check-label::before {
+    position: absolute;
+    display: block;
+    left: -5%;
+    top: 7%;
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 1px solid #000;
+    border-radius: 4px;
+}
+.modal-form-policy:checked + .modal-check-label::before {
+    position: absolute;
+    background-color: var(--fourth-color);
+    border-color: var(--fourth-color);
+    background-image: url(../images/Vector.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .modal-policy {
     font-family: var(--main-font);
     font-weight: normal;
@@ -847,5 +869,16 @@ img {
     letter-spacing: 0.06em;
     color: #FFF;
     cursor: pointer;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
 }
 /* === END Modal window === */
